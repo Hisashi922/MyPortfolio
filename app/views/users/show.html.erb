@@ -1,0 +1,42 @@
+<!--<h1>Anken Users#show</h1>-->
+<!--<p>Find me in app/views/users/show.html.erb</p>-->
+
+<main>
+  <p id="notice"><%= flash[:notice] %></p>
+  <div class='container'>
+    <div class='row justify-content-end'>
+      <div class='col-4'>
+        User Name: <%= current_user.name %>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-md-3'>
+        <h2>User info</h2>
+        <table class='table table-striped'>
+          <% if @user == current_user.id %>
+          <tr>
+            <th>Name</th>
+            <th><%= current_user.name %></th>
+          </tr>
+          <tr>
+            <th>Introduction</th>
+            <th><%= current_user.introduction %></th>
+          </tr>
+          <% else %>
+          <tr>
+            <th>Name</th>
+            <th><%= @user.name %></th>
+          </tr>
+          <tr>
+            <th>Introduction</th>
+            <th><%= @user.introduction %></th>
+          </tr>
+          <% end %>
+        </table>
+      <!--<div class='col-md-8 offset-md-1'>-->
+        <!--<h2>Books</h2>-->
+
+      </div>
+    </div>
+  </div>
+</main>
