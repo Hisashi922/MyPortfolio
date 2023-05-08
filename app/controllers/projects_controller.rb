@@ -4,11 +4,13 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.all
+    # @projects = Project.all
+    @projects = Project.all.order(created_at: :desc)
   end
 
   def show
     @project = Project.find(params[:id])
+    @comments = Comment.all.order(created_at: :desc)
   end
 
   def create
@@ -21,7 +23,7 @@ class ProjectsController < ApplicationController
     else
       @projects = Project.all
       @user = current_user
-      render :index
+      render :new
     end
   end
 
