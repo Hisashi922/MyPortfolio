@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.user_id = current_user.id
     if @project.save
-      flash[:notice] = 'You have created book successfully'
+      flash[:notice] = 'You have created project successfully'
       #redirect_to book_path(@book.id)
       redirect_to project_path(@project.id)
     else

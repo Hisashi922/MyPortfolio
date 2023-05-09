@@ -24,7 +24,7 @@
 
         <h3><%= @project.project_name %></h3>
 
-        <%= form_with model: @comment, url: 'new_project_comment_path', local: true do |c| %>
+        <%= form_with model: @comment, url: project_comments_path, local: true do |c| %>
 
           <div class="form-group">
             <%= c.label "コメント" %>

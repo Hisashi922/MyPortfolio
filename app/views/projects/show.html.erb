@@ -33,11 +33,15 @@
         </table>
         <br />
         <% @comments.each do |comment| %>
-          <% if comment.project_id == @project %>
+          <% if comment.project_id == @project.id %>
             <table class='table table-striped'>
               <tr>
                 <th>ユーザー</th>
                 <th><%= comment.user.name %></th>
+              </tr>
+              <tr>
+                <th>投稿日</th>
+                <th><%= comment.created_at %></th>
               </tr>
               <tr>
                 <th>コメント</th>
